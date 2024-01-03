@@ -1,0 +1,24 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My Tennis Club - List of all courts
+{% endblock %}
+
+
+{% block content %}
+
+  <p><a href="/">HOME</a></p>
+
+  <h1>Courts</h1>
+  
+  {% if mycourts %}
+  <ul>
+    {% for x in mycourts %}
+      <li><a href="{% url 'detail' x.id %}">{{ x.courtname }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No courts available.</p>
+{% endif %}
+
+{% endblock %}

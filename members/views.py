@@ -30,3 +30,8 @@ def testing(request):
     'fruits': ['Apple', 'Banana', 'Cherry'],   
   }
   return HttpResponse(template.render(context, request))
+
+def courts(request):
+  template = loader.get_template('all_courts.html')
+  return HttpResponse(template.render())
+
